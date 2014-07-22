@@ -40,4 +40,13 @@ gem 'spring',        group: :development
 
 gem 'rspec-rails', '~> 3.0.1', group: [:development, :test]
 gem 'guard-rspec', require: false, group: :development
-gem 'simplecov', require: false, group: :test
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+
+gem 'simple_form'
+gem 'byebug'
