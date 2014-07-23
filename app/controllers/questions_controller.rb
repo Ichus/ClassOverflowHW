@@ -6,6 +6,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
+    @question_answers = Answer.where(question_id: @question.id).order(created_at: :asc)
   end
 
   def new

@@ -1,8 +1,17 @@
 class AnswersController < ApplicationController
+  respond_to :html
+
   def new
+    @answer = Answer.new
+    @question = Question.find(params[:question_id])
+    respond_with @question, @answer
   end
 
   def create
+    @answer = @question.answers.build(answer_params)
+    @answer.save
+    flash[:notice] = 'Answer Added'
+    respond_with @answer, location: question_path, id: @question.id
   end
 
   private

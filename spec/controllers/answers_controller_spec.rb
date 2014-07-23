@@ -4,13 +4,14 @@ RSpec.describe AnswersController, :type => :controller do
 
   describe "GET 'new'" do
     it "returns http success" do
-      get 'new'
+      question = create(:question)
+      get new_question_answer_path question_id: question.id
       expect(response).to be_success
     end
   end
 
   describe "POST 'create'" do
-    
+
   end
 
 end

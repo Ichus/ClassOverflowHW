@@ -4,13 +4,13 @@ feature 'Manage questions' do
   scenario 'lists all questions on #index' do
     question = create_list(:question, 2)
     visit questions_path
-    expect(page).to have_content('Title 2')
     expect(page).to have_content('Title 3')
+    expect(page).to have_content('Title 4')
   end
 
   scenario 'lists question on #show' do
     question = create(:question)
-    visit question_path, id: question.id
+    visit question_path id: question.id
     expect(page).to have_content(question.title)
   end
 

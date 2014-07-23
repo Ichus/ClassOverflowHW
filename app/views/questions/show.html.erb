@@ -1,0 +1,9 @@
+  <h2><%= @question.title %></h2>
+  <p><%= @question.content %></p>
+  <p><%= @question.created_at %></p>
+
+  <% @question_answers.each do |answer| %>
+    <br><br><h5><%= answer.answerer %></h5>
+    <p><%= answer.answer %></p>
+    <p><%= answer.created_at %></p>
+  <% end %>
