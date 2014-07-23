@@ -5,6 +5,9 @@ class QuestionsController < ApplicationController
     respond_with @questions
   end
 
+  def show
+  end
+
   def new
     @question = Question.new
     respond_with @question
