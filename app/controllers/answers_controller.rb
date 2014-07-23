@@ -8,10 +8,11 @@ class AnswersController < ApplicationController
   end
 
   def create
+    @question = Question.find params[:question_id]
     @answer = @question.answers.build(answer_params)
     @answer.save
     flash[:notice] = 'Answer Added'
-    respond_with @answer, location: question_path, id: @question.id
+    respond_with @answer, location: question_path(id: @question.id)
   end
 
   private
